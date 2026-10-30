@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Orchestra of Peers: A Tune Up Philly Campaign by Melissa Rodier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Schibsted+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F6F8; --surface:#FFFFFF; --ink:#1B2236; --muted:#5A6175; --line:#D6DAE2;
+  --velvet:#8E2338; --brass:#A87B22; --staff:#C5CAD5;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Schibsted Grotesk",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#12161F; --surface:#1A1F2B; --ink:#E8EAF0; --muted:#A3A9B8; --line:#2E3546;
+    --velvet:#E07A8C; --brass:#D9AE57; --staff:#3A4256; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12161F; --surface:#1A1F2B; --ink:#E8EAF0; --muted:#A3A9B8; --line:#2E3546;
+  --velvet:#E07A8C; --brass:#D9AE57; --staff:#3A4256; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55}
+a{color:var(--velvet);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--brass);outline-offset:3px;border-radius:2px}
+img{max-width:100%}
+
+/* nav */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav ul{list-style:none;margin:0 auto;padding:0 20px;max-width:1040px;display:flex;gap:22px;overflow-x:auto;white-space:nowrap}
+nav a{display:inline-block;padding:16px 0;color:var(--muted);text-decoration:none;font-size:15px;font-weight:500}
+nav a:hover{color:var(--ink)}
+
+/* hero with staff lines */
+.hero{max-width:1040px;margin:0 auto;padding:72px 20px 48px;position:relative}
+.staff{position:relative}
+.staff::after{content:"";display:block;height:41px;margin-top:28px;border-right:6px double var(--ink);
+  background:repeating-linear-gradient(to bottom,var(--staff) 0 1px,transparent 1px 10px)}
+.hero h1{position:relative;font-family:var(--serif);font-weight:600;font-size:clamp(44px,8vw,96px);line-height:.98;letter-spacing:-.02em;margin:0;max-width:11ch}
+.hero .sub{font-family:var(--serif);font-size:clamp(20px,2.4vw,26px);line-height:1.35;color:var(--muted);margin:28px 0 0;max-width:34ch}
+.byline{margin-top:28px;font-size:15px;color:var(--muted)}
+.byline strong{color:var(--ink);font-weight:600}
+
+.note{max-width:1040px;margin:0 auto 8px;padding:0 20px}
+.note p{margin:0;max-width:68ch;font-size:15.5px;color:var(--muted);border-left:3px solid var(--brass);padding:4px 0 4px 16px}
+
+section{max-width:1040px;margin:0 auto;padding:64px 20px 8px}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4vw,42px);line-height:1.1;margin:0 0 12px;letter-spacing:-.01em}
+.lede{color:var(--muted);max-width:60ch;margin:0 0 32px}
+
+/* feature */
+.feature{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:clamp(28px,5vw,64px)}
+.feature h3{font-family:var(--serif);font-weight:600;font-size:clamp(28px,3.4vw,38px);line-height:1.15;margin:0 0 6px;max-width:22ch}
+.feature .dek{font-family:var(--serif);font-style:italic;color:var(--muted);margin:0 0 32px;font-size:19px}
+.feature .body{max-width:66ch}
+.feature .body p{font-family:var(--serif);font-size:19.5px;line-height:1.7;margin:0 0 1.15em}
+.ph{font-family:var(--sans);font-size:15px;font-style:normal;color:var(--velvet);background:color-mix(in srgb,var(--velvet) 8%,transparent);padding:1px 6px;border-radius:3px;line-height:1.6}
+p.phblock{font-family:var(--sans)!important;font-size:15.5px!important;line-height:1.55!important;color:var(--velvet);border:1px dashed color-mix(in srgb,var(--velvet) 45%,transparent);border-radius:4px;padding:12px 14px}
+
+/* plan */
+.plan{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:40px 48px}
+.plan h3{font-size:19px;font-weight:700;margin:0 0 8px}
+.plan p{margin:0 0 10px;max-width:58ch}
+.plan ul{margin:0;padding-left:20px}
+.plan li{margin:0 0 6px}
+.big-idea{font-family:var(--serif);font-size:clamp(22px,2.6vw,28px);line-height:1.4;max-width:40ch;margin:0 0 40px}
+
+/* score timeline */
+.score-wrap{overflow-x:auto;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:8px}
+.score{display:grid;grid-template-columns:repeat(5,minmax(200px,1fr));min-width:1000px;position:relative}
+.measure{position:relative;padding:0 20px 26px;border-right:2px solid var(--ink)}
+.measure:last-child{border-right:6px double var(--ink)}
+.measure::before{content:"";position:absolute;left:0;right:0;top:0;height:57px;background:repeating-linear-gradient(to bottom,var(--staff) 0 1px,transparent 1px 14px);pointer-events:none}
+.measure .when{position:relative;font-size:13.5px;font-weight:700;color:var(--velvet);margin:72px 0 14px}
+.measure h4{font-family:var(--serif);font-size:21px;margin:0 0 8px;font-weight:600}
+.measure p{margin:0;font-size:15.5px;color:var(--muted)}
+.measure.finale{background:color-mix(in srgb,var(--brass) 10%,transparent)}
+.scroll-hint{font-size:14px;color:var(--muted);margin:10px 0 0}
+@media (min-width:1080px){.scroll-hint{display:none}}
+
+/* writing */
+.writing{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px}
+.wcard{border-top:3px solid var(--ink);padding-top:16px}
+.wcard h3{font-family:var(--serif);font-size:23px;margin:0 0 6px;font-weight:600}
+.wcard p{margin:0 0 10px;color:var(--muted);max-width:52ch}
+
+footer{max-width:1040px;margin:64px auto 0;padding:32px 20px 56px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+footer p{margin:0 0 6px}
+</style>
+</head>
+<body>
+<nav aria-label="Page sections"><ul>
+  <li><a href="#feature">The feature</a></li>
+  <li><a href="#campaign">The campaign</a></li>
+  <li><a href="#timeline">Timeline</a></li>
+  <li><a href="#writing">More of my writing</a></li>
+</ul></nav>
+
+<header class="hero">
+  <div class="staff"><h1>Orchestra of Peers</h1></div>
+  <p class="sub">A spring campaign telling the Tune Up Philly story through the students, alumni and teaching artists who live it.</p>
+  <p class="byline">A spec writing sample and campaign plan by <strong>Melissa Rodier</strong> for the Director of Marketing &amp; Communications role at PYO Music Institute</p>
+</header>
+
+<div class="note"><p>This is a spec piece. The feature is written the way I’d write it after a day of reporting at a Tune Up Philly site, so scene details are illustrative and the highlighted notes mark where real quotes and stories from that day would go.</p></div>
+
+<section id="feature" aria-labelledby="feature-h">
+  <h2 id="feature-h">The feature</h2>
+  <p class="lede">My writing sample, built to run on the PYOMI website and anchor the campaign in the weeks before the Festival Concert.</p>
+  <article class="feature">
+    <h3>Playing Time</h3>
+    <p class="dek">A look at the 6- to 14-year-olds who are playing in a new way, as they prepare for Tune Up Philly’s spring Festival Concert</p>
+    <div class="body">
+      <p>In a music room in Philadelphia, there’s a cacophony of sound before a single student has even lifted an instrument. Chairs scrape, kids chatter and laugh, and instrument cases click open. It’s the soundtrack of a Wednesday afternoon on Wissahickon Avenue, in a room buzzing with enthusiasm, until it’s finally halted by a clap for attention from <span class="ph">[instructor name]</span>.</p>
+      <p>This is the Academy at the Salvation Army Kroc Center, one of six community site partners for Tune Up Philly. The program launched in 2010 as a free after-school program for students in under-resourced neighborhoods around the city, and it’s part of PYO Music Institute (PYOMI), a nonprofit now in its 87th season that serves more than 1,000 students across the region.</p>
+      <p>The 6- to 14-year-olds in the program are perfecting their skills on strings, woodwinds and brass with the guidance of professional teaching artists, but the program is about so much more than that. Students are also learning important life skills, and it’s evident just watching the class as <span class="ph">[a moment that shows the “orchestra of peers” idea in action, like a student helping a neighbor find their place in the music]</span>.</p>
+      <p>Every rehearsal this season has been building toward something big: the Annual Festival Concert, a chance to perform on stage at the Temple Performing Arts Center in front of an audience of family and friends. <span class="ph">[Student quote or anecdote about what the concert means to them and why they’re excited.]</span></p>
+      <p class="phblock">[Human interest story about one student: what brought them here, what they’ve learned, what they want now and how the program has shaped their goals.]</p>
+      <p>For many of these students, Tune Up Philly is just the first chapter of a long story. Many continue on to the Young Musicians Debut Orchestra and other PYOMI programs. <span class="ph">[Alumni success story in music.]</span> And even for those who don’t pursue a career in the arts, the impact of the program stays with them. <span class="ph">[Short story from an alum who went in a different direction.]</span></p>
+      <p>As the music replaces the scattered sounds of the room, a mix of discipline and joy fills the space and <span class="ph">[description of the piece being played]</span> comes to life. Every instrument, every page of sheet music and every teaching artist in this room is here for these students thanks to the generosity of a community that believes in programs like Tune Up Philly. That support has made an impact you can see, feel and hear, and it has opened a door for many students into a world they may not have known before. For the <span class="ph">[number of students]</span> at the Academy today, and the 109 students Tune Up Philly served last season, the impact of this program will echo throughout their lives.</p>
+      <p>If you’d like to learn more about Tune Up Philly, or see the impact your contribution can have for students throughout Philadelphia, click here. And if you’re looking for an amazing afternoon, there’s still time to save your seat and cheer on <span class="ph">[names of featured students]</span> and their orchestra of peers at this year’s Annual Festival Concert!</p>
+    </div>
+  </article>
+</section>
+
+<section id="campaign" aria-labelledby="campaign-h">
+  <h2 id="campaign-h">The campaign</h2>
+  <p class="big-idea">Tune Up Philly, told by the people in it. Every piece of content comes from students, alumni and teaching artists, and everything builds toward the spring Festival Concert with two goals: fill the seats and grow support for the program.</p>
+  <div class="plan">
+    <div>
+      <h3>One content day, many pieces</h3>
+      <p>A single day at a Tune Up Philly site to capture rehearsal footage, photos, student and teaching artist interviews, and testimonials. That day feeds the feature, social, email, video and the concert program.</p>
+    </div>
+    <div>
+      <h3>What Tune Up Philly Meant to Me</h3>
+      <p>An alumni series with short written and video stories from former students, including those who kept playing and those who took the lessons somewhere else entirely.</p>
+    </div>
+    <div>
+      <h3>Standing O</h3>
+      <p>A recurring social series where students give a “standing ovation” to a peer who’s doing great, in their own words. It’s the orchestra of peers idea in action.</p>
+    </div>
+    <div>
+      <h3>The Sounds of Tune Up Philly</h3>
+      <p>A Spotify playlist curated by students at each of the six sites, so every community gets its own sound. Easy to share, and a fun way for supporters to get to know the kids.</p>
+    </div>
+    <div>
+      <h3>Email</h3>
+      <p>A mix of program emails spotlighting students, teaching artists and the concert, plus one or two emails written by a student or alum, with light editing support so their voice comes through.</p>
+    </div>
+    <div>
+      <h3>Paid social</h3>
+      <ul>
+        <li>Boost organic posts that are already taking off</li>
+        <li>Concert promotion in the final weeks</li>
+        <li>Fundraising posts tied to the alumni series</li>
+      </ul>
+      <p>Targeting parents, past concertgoers and local arts audiences, never the students themselves.</p>
+    </div>
+    <div>
+      <h3>Musician cameos</h3>
+      <p>Start close to home: PYO alumni now performing with The Philadelphia Orchestra recording short “I started where you are” messages. Then a stretch ask to Philly artists who love this city, like The Roots, to record a short message or performance for the students.</p>
+    </div>
+    <div>
+      <h3>Press</h3>
+      <p>Pitch the feature angle to WRTI, BroadwayWorld Philadelphia and neighborhood news, with an invitation to a rehearsal and interviews with the program director and a family.</p>
+    </div>
+    <div>
+      <h3>Doing it right</h3>
+      <ul>
+        <li>Signed media releases from parents before anything is shared</li>
+        <li>First names only, with no school details</li>
+        <li>Playlists run on PYOMI’s account with a quick content review</li>
+      </ul>
+    </div>
+    <div>
+      <h3>How we’ll know it worked</h3>
+      <ul>
+        <li>Concert attendance and RSVPs</li>
+        <li>Donations, average gift and first-time donors</li>
+        <li>Email opens and clicks</li>
+        <li>Social saves, shares and playlist follows</li>
+        <li>Press pickup</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="timeline" aria-labelledby="timeline-h">
+  <h2 id="timeline-h">Timeline</h2>
+  <p class="lede">About ten weeks, building to the Festival Concert like a piece building to its finale.</p>
+  <div class="score-wrap" role="region" aria-label="Campaign timeline" tabindex="0">
+    <ol class="score" style="list-style:none;margin:0;padding:0">
+      <li class="measure"><p class="when">Weeks 1–2</p><h4>Capture</h4><p>Content day at a Tune Up Philly site. Media releases, interviews, footage and alumni outreach begin.</p></li>
+      <li class="measure"><p class="when">Weeks 3–5</p><h4>Introduce</h4><p>The feature runs. Alumni series and Standing O launch. Program spotlight emails start.</p></li>
+      <li class="measure"><p class="when">Weeks 6–7</p><h4>Build</h4><p>Site playlists release. Musician cameos post. Press pitches go out. Boost what’s working.</p></li>
+      <li class="measure"><p class="when">Weeks 8–9</p><h4>Invite</h4><p>Student-written emails, concert promotion and fundraising ads. Final push to save a seat.</p></li>
+      <li class="measure finale"><p class="when">Concert week</p><h4>Finale</h4><p>The Festival Concert, followed by a thank-you recap with photos and a last chance to give.</p></li>
+    </ol>
+  </div>
+  <p class="scroll-hint">Scroll sideways to see the full timeline.</p>
+</section>
+
+<section id="writing" aria-labelledby="writing-h">
+  <h2 id="writing-h">More of my writing</h2>
+  <p class="lede">I started out writing about live performance in Philadelphia, as a contributing editor for BroadwayWorld and an intern at the Wilma Theater.</p>
+  <div class="writing">
+    <div class="wcard">
+      <h3>BroadwayWorld review: The Most Awkward Love Life of Peabody Magoo</h3>
+      <p>My review of a Philly Fringe Festival production, focused on the performers and what made the show worth seeing.</p>
+      <a href="https://www.broadwayworld.com/philadelphia/article/BWW-Review-THE-MOST-AWKWARD-LOVE-LIFE-OF-PEABODY-MAGOO-Searches-For-Love-at-Philly-Fringe-20150907">Read the review on BroadwayWorld</a>
+    </div>
+    <div class="wcard">
+      <h3>My portfolio</h3>
+      <p>Campaign work, results and the stories behind them from 10 years in marketing.</p>
+      <a href="https://melissa-rodier.github.io/portfolio">See my portfolio</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><strong style="color:var(--ink)">Melissa Rodier</strong>, Philadelphia</p>
+  <p><a href="mailto:melissa.a.rodier@gmail.com">melissa.a.rodier@gmail.com</a> &nbsp;|&nbsp; <a href="https://linkedin.com/in/melissa-rodier">LinkedIn</a> &nbsp;|&nbsp; <a href="Melissa_Rodier_Resume.pdf" download>Download my resume (PDF)</a></p>
+</footer>
+</body>
+</html>
